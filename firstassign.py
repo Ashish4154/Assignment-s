@@ -88,7 +88,8 @@ Ans : it is used when condition is given in statement whether the first statemen
 Q21. What is use of 'if', 'elif' and 'else' keywords?
 And: IF---It allows conditional excecution
      elif--if the previous conditions is not true, then elif condition is used.
-     else---it is not mendatory to use this block but this is used at the end if all conditions are false to declare result,
+     else---it is not mendatory to use this block but this is used at the end if all conditions are false to declare result.
+     
 Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
 Ans :
 age = int(input("enter your age:"))
