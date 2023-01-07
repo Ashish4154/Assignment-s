@@ -1,0 +1,167 @@
+
+Q1. How do you load a CSV file into a Pandas DataFrame?
+
+ANS:  d=pd.read_csv("pokemon_data.csv")
+
+      df=pd.DataFrame(d)
+
+Q2. How do you check the data type of a column in a Pandas DataFrame?
+
+ANS: we can use the “dtype” attribute.
+
+       Ex--df.dtypes
+
+Q3. How do you select rows from a Pandas DataFrame based on a condition?
+
+ANS: We can use Loc[]
+
+     Ex- df.loc[df['HP']>80]
+
+Q4. How do you rename columns in a Pandas DataFrame?
+
+ANS:Columns can be renamed by using the rename() function. This method is quite            useful when we need to rename some selected columns because we need to specify information only for the columns which are to be renamed.
+
+    Ex-df.rename(columns = {'Type 1':'one','Type 2':'two'}, inplace = True)
+
+Q5. How do you drop columns in a Pandas DataFrame?
+
+ANS:We can use drop() method.
+
+    Ex-df.drop(columns='Total',inplace=True)
+
+Q6. How do you find the unique values in a column of a Pandas DataFrame?
+
+ANS:we can get unique values in pandas dataframe by using unique()
+
+    Ex-df['HP'].unique()
+
+Q7. How do you find the number of missing values in each column of a Pandas DataFrame?
+
+ANS:We can use pandas “isnull()” function to find out all the fields which have missing values.
+
+    Ex-df.isnull()
+
+Q8. How do you fill missing values in a Pandas DataFrame with a specific value?
+
+ANS:We can use fillna metheod. The fillna() method replaces the NULL values with a specified value.
+
+    Ex-df.fillna('missing')
+
+Q9. How do you concatenate two Pandas DataFrames?
+
+ANS: we can use pd.concat() method in the form of a list and mention in which axis you     want to concat, i.e. axis=0 to concat along rows, axis=1 to concat along columns.
+
+     Ex- pd.concat([df1,df2])
+
+Q10. How do you merge two Pandas DataFrames on a specific column?
+
+ANS:We can merge two Pandas DataFrames on certain columns using the merge function by simply specifying the certain columns for merge.
+
+    Ex-df1.merge(df2[['Name', 'Grade', 'Rank']])
+
+Q11. How do you group data in a Pandas DataFrame by a specific column and apply an aggregation function?
+
+ANS: we have to use groupby and aggregate function together.
+
+     Ex-grouped_single = df.groupby('Team').agg({'Age': ['mean', 'min', 'max']}).
+
+Q12. How do you pivot a Pandas DataFrame?
+
+ANS: The pivot() function is used to reshaped a given DataFrame organized by given index / column values.
+
+     Ex-DataFrame.pivot(self, index=None, columns=None, values=None)
+
+Q13. How do you change the data type of a column in a Pandas DataFrame?
+
+ANS: DataFrame.astype() method is used to cast pandas object to a specified dtype.
+
+     Ex-df = df.astype(str)
+
+Q14. How do you sort a Pandas DataFrame by a specific column?
+
+ANS: We can use sort_value()
+
+     Ex-df.sort_values('Name')
+
+        df.sort_values('HP',ascending=False)
+
+        df.sort_values(['Name','HP'],ascending=True)
+
+Q15. How do you create a copy of a Pandas DataFrame?
+
+ANS: The copy() method returns a copy of the DataFrame.
+
+     Ex-newdf = df.copy()
+
+Q16. How do you filter rows of a Pandas DataFrame by multiple conditions?
+
+ANS: We can use loc function with multiple condition.
+
+  Ex-df.loc[(df['HP']>80) & (df['Defense']<80)]
+
+     df.loc[df['Name'].str.contains('ol')]
+
+     df.loc[~df['Name'].str.startswith('O')]
+
+     df.loc[df['Name'].str.endswith('a')]
+
+Q17. How do you calculate the mean of a column in a Pandas DataFrame?
+
+ANS: To get column average or mean from pandas DataFrame We can use either mean() and describe() method. The DataFrame.mean() method is used to return the mean of the values for the requested axis
+
+     Ex-df[Age].mean()
+
+Q18. How do you calculate the standard deviation of a column in a Pandas DataFrame?
+
+ANS: We can use std() to calculate standard deviation.
+
+     Ex- df['Age'].std()
+
+Q19. How do you calculate the correlation between two columns in a Pandas DataFrame?
+
+ANS: By using corr() function we can get the correlation between two columns in the    dataframe.
+
+     Ex-d=df['HP'].corr(df['Attack'])
+
+        print(d)
+
+Q20. How do you select specific columns in a DataFrame using their labels?
+
+ANS: We can Use DataFrame.loc[]  to select a single column or multiple columns from pandas DataFrame by column names/label
+
+     Ex- df.loc[0:5,'Name':'Total']
+
+Q21. How do you select specific rows in a DataFrame using their indexes?
+
+ANS: You can select a single row from pandas DataFrame by integer index using df.iloc[n].
+
+     Ex-df.iloc[0:4]
+ 
+Q22. How do you sort a DataFrame by a specific column?
+
+ANS: We can use sort_value()
+
+ Ex-df.sort_values('Name')
+
+    df.sort_values('HP',ascending=False)
+
+    df.sort_values(['Name','HP'],ascending=True)
+
+Q23. How do you create a new column in a DataFrame based on the values of another column?
+
+ANS: we can use like orperation like below
+
+    Ex-df['Percentage']=(df['Total']/6)*100
+
+Q24. How do you remove duplicates from a DataFrame?
+
+ANS: By using pandas.DataFrame.drop_duplicates() method you can remove duplicate rows from DataFrame.
+
+    Ex-df.drop_duplicates()
+
+Q25. What is the difference between .loc and .iloc in Pandas?
+
+ANS: loc is label-based, which means that you have to specify rows and columns based on their row and column labels.
+
+     iloc is integer position-based, so you have to specify rows and columns by their integer position values (0-based integer position).
+
